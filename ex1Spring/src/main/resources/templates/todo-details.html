@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Todo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="todo">
+    <h2 th:text="${todo.name}">Titre du Todo</h2>
+    <p th:text="${todo.description}">Description du Todo</p>
+    <p class="status" th:classappend="${!todo.isDone} ? 'not-done' : ''">
+        Statut: <span th:text="${todo.isDone} ? 'Terminé' : 'Non terminé'">Non terminé</span>
+    </p>
+</div>
+</body>
+</html>
